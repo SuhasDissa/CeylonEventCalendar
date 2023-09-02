@@ -1,7 +1,9 @@
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { writeFileSync } from 'fs';
 import * as crypto from 'crypto';
 import { addNewEvent } from '$lib/server/database/index.js';
+import { error } from '@sveltejs/kit';
+import { getEventById } from '$lib/server/database';
 import type { CalendarEvent } from '$lib/server/database/types';
 
 export const actions = {
@@ -37,7 +39,7 @@ export const actions = {
             id: 0,
             image: fileName,
             name: data.name,
-            time: data.time,
+            time: parseInt(data.time),
             description: data.description,
             category: data.category,
             organizer: data.organizer,
@@ -45,8 +47,17 @@ export const actions = {
             contact: data.contact
         }
         addNewEvent(event);
-        return {
-            success: true
-        };
+        throw redirect(303, '/');
     }
 };
+
+export async function load({ url }) {
+    const id = url.searchParams.get("id");
+    if (id) {
+        const event: CalendarEvent = getEventById(id);
+
+        if (event) {
+            console.log(event);
+        }
+    }
+}

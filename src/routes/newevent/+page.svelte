@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import type { CalendarEvent } from '$lib/server/database/types';
 
 	let uploading = false;
 	let files: FileList;
@@ -183,7 +184,7 @@
 		<button
 			type="submit"
 			class="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-bold rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
-			>Submit</button
+			>Add event</button
 		>
 	</form>
 </div>

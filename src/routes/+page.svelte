@@ -17,7 +17,7 @@
 				description={event.description}
 				image={event.image}
 				location={event.location}
-				time={parseInt(event.time)}
+				time={event.time}
 			/>
 		{/each}
 	</div>

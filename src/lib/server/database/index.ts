@@ -9,7 +9,7 @@ export function addNewEvent(event: CalendarEvent) {
 }
 
 export function getAllEvents(): CalendarEvent[] {
-  const statemt = db.prepare('SELECT * FROM events')
+  const statemt = db.prepare('SELECT * FROM events ORDER BY time ASC')
   const events = statemt.all();
   return events as CalendarEvent[];
 }
