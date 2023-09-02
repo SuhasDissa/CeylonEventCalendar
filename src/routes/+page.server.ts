@@ -1,9 +1,8 @@
-import { getAllEvents } from '$lib/server/database';
+import { getRecentEvents } from '$lib/server/database';
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ params }) {
-    let events = getAllEvents();
-
+export async function load() {
+    let events = getRecentEvents(3);
     return {
         events
     };

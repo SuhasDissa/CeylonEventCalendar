@@ -14,21 +14,21 @@ export function getAllEvents(): CalendarEvent[] {
   return events as CalendarEvent[];
 }
 
+export function getRecentEvents(limit: number): CalendarEvent[] {
+  const statemt = db.prepare('SELECT * FROM events ORDER BY time ASC LIMIT ?')
+  const events = statemt.all(limit);
+  return events as CalendarEvent[];
+}
+
+export function searchEvents(q: string): CalendarEvent[] {
+  const statemt = db.prepare('SELECT * FROM events WHERE name LIKE ? OR description LIKE ?')
+  const events = statemt.all(q, q);
+  return events as CalendarEvent[];
+}
+
 export function getEventById(id: string): CalendarEvent {
   const statemt = db.prepare('SELECT * FROM events WHERE id = ?');
   const event = statemt.get(id);
   return event as CalendarEvent;
-}
-
-export function getEventsCount(): number {
-  const statemt = db.prepare('SELECT * FROM events');
-  const count = statemt.all().length;
-  return count as number;
-}
-
-export function getHalalEventsCount(): number {
-  const statemt = db.prepare('SELECT * FROM Events WHERE halal_status=1');
-  const count = statemt.all().length;
-  return count as number;
 }
 

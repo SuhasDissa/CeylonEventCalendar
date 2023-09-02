@@ -2,7 +2,6 @@ import { fail, redirect } from '@sveltejs/kit';
 import { writeFileSync } from 'fs';
 import * as crypto from 'crypto';
 import { addNewEvent } from '$lib/server/database/index.js';
-import { error } from '@sveltejs/kit';
 import { getEventById } from '$lib/server/database';
 import type { CalendarEvent } from '$lib/server/database/types';
 
