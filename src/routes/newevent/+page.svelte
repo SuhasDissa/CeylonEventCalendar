@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import type { CalendarEvent } from '$lib/server/database/types';
 
 	let uploading = false;
 	let files: FileList;

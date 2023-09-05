@@ -4,11 +4,11 @@ import type { CalendarEvent } from '$lib/server/database/types.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
-    const event: CalendarEvent = getEventById(params.id);
+	const event: CalendarEvent = getEventById(params.id);
 
-    if (event) {
-        return { event };
-    }
+	if (event) {
+		return { event };
+	}
 
-    throw error(404, 'Not found');
+	throw error(404, 'Not found');
 }

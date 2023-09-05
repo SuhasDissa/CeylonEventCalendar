@@ -15,9 +15,9 @@
 			/>
 		</div>
 		<div class="sm:px-8 pt-8 sm-pt-0">
-			<h3 class="text-slate-700 dark:text-slate-300 text-3xl sm:text-4xl md:text-5xl font-bold">
+			<h1 class="text-slate-700 dark:text-slate-300 text-3xl sm:text-4xl md:text-5xl font-bold">
 				{event.name}
-			</h3>
+			</h1>
 			<h2 class="text-slate-400 text-xl sm:text-2xl md:text-4xl font-bold max-w-prose pt-4 sm:pt-8">
 				<span class="material-symbols-rounded text-4xl">
 					event
