@@ -33,7 +33,7 @@
 				/>
 				<button
 					type="submit"
-					class="text-white absolute right-2.5 bottom-2.5 bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
+					class="text-white absolute right-2.5 bottom-2.5 bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 rounded-full text-sm px-4 py-2 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800 font-bold"
 					>Search</button
 				>
 			</div>
@@ -48,12 +48,7 @@
 		>
 			{#each events as event}
 				<EventCard
-					id={event.id}
-					name={event.name}
-					description={event.description}
-					image={event.image}
-					location={event.location}
-					time={event.time}
+					event={event}
 				/>
 			{/each}
 		</div>

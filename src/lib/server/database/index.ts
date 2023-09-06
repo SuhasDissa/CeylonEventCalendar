@@ -28,14 +28,26 @@ export function searchEvents(q: string): CalendarEvent[] {
 	return events as CalendarEvent[];
 }
 
+export function searchEventsCategory(q: string, category: string): CalendarEvent[] {
+	const statemt = db.prepare('SELECT * FROM events WHERE name LIKE ? OR description LIKE ? AND category = ?');
+	const events = statemt.all(q, q, category);
+	return events as CalendarEvent[];
+}
+
 export function getSuggestions(q: string): string[] {
 	const statemt = db.prepare('SELECT name FROM events WHERE name LIKE ?');
 	const suggestions = statemt.all(q);
-	return suggestions.map(obj=> obj.name) as string[];
+	return suggestions.map(obj => obj.name) as string[];
 }
 
 export function getEventById(id: string): CalendarEvent {
 	const statemt = db.prepare('SELECT * FROM events WHERE id = ?');
 	const event = statemt.get(id);
 	return event as CalendarEvent;
+}
+
+export function getEventsByCategory(category: string): CalendarEvent[] {
+	const statemt = db.prepare('SELECT * FROM events WHERE category = ?');
+	const events = statemt.all(category);
+	return events as CalendarEvent[];
 }

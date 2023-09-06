@@ -16,14 +16,7 @@
 	</h2>
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4 pt-4 sm:pt-8">
 		{#each events as event}
-			<EventCard
-				id={event.id}
-				name={event.name}
-				description={event.description}
-				image={event.image}
-				location={event.location}
-				time={event.time}
-			/>
+			<EventCard {event} />
 		{/each}
 	</div>
 </div>
