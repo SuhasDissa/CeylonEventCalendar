@@ -80,6 +80,23 @@
 			</div>
 		</form>
 	</section>
+	<section class="pt-10">
+		<div
+			class="grid justify-items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 grid-flow-row gap-4"
+		>
+			{#each categories as ctgry}
+				<form
+					action="events"
+					class="w-32 bg-slate-50 rounded-lg drop-shadow hover:-translate-y-1 hover:drop-shadow-md duration-100 dark:bg-slate-800 dark:hover:bg-slate-700 overflow-hidden"
+				>
+					<input value={ctgry.id} type="hidden" name="category" required />
+					<button class="p-2 text-lg font-bold tracking-tight text-slate-700 dark:text-slate-300"
+						>{ctgry.name}</button
+					>
+				</form>
+			{/each}
+		</div>
+	</section>
 	<section class="pt-20">
 		<h2 class="text-slate-600 dark:text-slate-400 text-2xl sm:text-3xl md:text-5xl font-bold">
 			Upcoming Events
