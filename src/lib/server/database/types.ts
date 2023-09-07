@@ -9,3 +9,8 @@ export interface CalendarEvent {
 	location: string;
 	contact: string;
 }
+
+export interface Category {
+    id: string;
+    name: string;
+}

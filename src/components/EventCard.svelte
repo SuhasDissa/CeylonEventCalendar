@@ -10,7 +10,7 @@
 
 <a
 	href="/event/{event.id}"
-	class="flex flex-col max-w-sm bg-slate-50 rounded-lg drop-shadow hover:-translate-y-2 hover:drop-shadow-xl duration-100 dark:bg-slate-800 dark:hover:bg-slate-700 overflow-hidden"
+	class="flex flex-col max-w-sm bg-slate-50 rounded-lg drop-shadow hover:-translate-y-2 hover:drop-shadow-xl duration-100 dark:bg-slate-800 dark:hover:bg-slate-700 overflow-hidden hover:scale-[1.01]"
 >
 	<div
 		class="relative aspect-[4/3] bg-center bg-cover bg-no-repeat"

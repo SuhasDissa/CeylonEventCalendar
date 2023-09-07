@@ -8,13 +8,12 @@
 <div class="mx-auto max-w-screen-xl px-8 py-20">
 	<div class="grid grid-cols-1 sm:grid-cols-2">
 		<div class="sm:px-8">
-			<img
-				src="/uploads/{event.image}"
-				class="block w-full rounded-md sm:rounded-xl sm:drop-shadow-xl"
-				alt=""
+			<div
+				class="relative aspect-[4/3] bg-center bg-cover bg-no-repeat w-full rounded-md sm:rounded-xl"
+				style="background-image:url('/uploads/{event.image}');"
 			/>
 		</div>
-		<div class="sm:px-8 pt-8 sm-pt-0">
+		<div class="sm:px-8 pt-8 sm:pt-0">
 			<h1 class="text-slate-700 dark:text-slate-300 text-3xl sm:text-4xl md:text-5xl font-bold">
 				{event.name}
 			</h1>
