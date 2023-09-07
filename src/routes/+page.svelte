@@ -31,7 +31,7 @@
 				{#if category}
 					{category.name}
 				{:else}
-					All Categories
+					Category
 				{/if}
 			</button>
 			<input bind:value={catId} name="category" type="hidden" />

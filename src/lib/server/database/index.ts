@@ -29,7 +29,7 @@ export function searchEvents(q: string): CalendarEvent[] {
 }
 
 export function searchEventsCategory(q: string, category: string): CalendarEvent[] {
-	const statemt = db.prepare('SELECT * FROM events WHERE name LIKE ? OR description LIKE ? AND category = ?');
+	const statemt = db.prepare('SELECT * FROM events WHERE ( name LIKE ? OR description LIKE ? ) AND category = ?');
 	const events = statemt.all(q, q, category);
 	return events as CalendarEvent[];
 }
