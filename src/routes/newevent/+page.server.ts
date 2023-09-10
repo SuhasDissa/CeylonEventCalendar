@@ -39,8 +39,8 @@ export const actions = {
 			location: data.location,
 			contact: data.contact
 		};
-		addNewEvent(event);
-		throw redirect(303, '/');
+		const id = addNewEvent(event);
+		throw redirect(303, `/event/${id}`);
 	}
 };
 

@@ -3,11 +3,12 @@ import type { CalendarEvent } from './types';
 
 const db = new Database('database/main.db', { verbose: console.log, fileMustExist: false });
 
-export function addNewEvent(event: CalendarEvent) {
+export function addNewEvent(event: CalendarEvent): number | bigint {
 	const statemt = db.prepare(
 		'INSERT INTO events (name, image, description, time, category, organizer, location, contact) VALUES (@name, @image, @description, @time,@category, @organizer, @location, @contact)'
 	);
-	statemt.run(event);
+	const result = statemt.run(event);
+	return result.lastInsertRowid;
 }
 
 export function getAllEvents(): CalendarEvent[] {
